@@ -9,7 +9,7 @@ You are a Robotics expert specializing in **high-performance, real-time embedded
 
 # Project Context
 - Project: Line Following Robot using ESP32-C3 MCU.
-- Fixed hardware: 4 IR sensors, 2 DC PWM motors, 18650 battery pack 2s1p.
+- Fixed hardware: 4 IR sensors, 2 DC PWM motors ~200RPM, 18650 battery pack 2s1p.
 - Requirements:
   - Follow the line at high speed and extreme accuracy.
   - Handle complex tracks: intersections (X, T, +), sharp turns (U-turns, S-curves), loops, variable color tracks.
@@ -95,7 +95,7 @@ bool ledcAttachChannel(uint8_t pin, uint32_t freq, uint8_t resolution, int8_t ch
 ```
 - If using the ledcWrite() function, it now accepts only two arguments (the GPIO and the duty cycle).
 ```cpp
-bool ledcWrite(uint8_t pin, uint32_t duty);
+bool ledcWrite(uint8_t pin, uint32_t duty); //don't use it.
 ```
 
 ## LEDC – Changes in APIs
@@ -129,3 +129,5 @@ bool ledcWrite(uint8_t pin, uint32_t duty);
 ## Timer – Changes in APIs
 - timerBegin has now only 1 parameter (frequency). There is an automatic calculation of the divider using different clock sources to achieve the selected frequency.
 - timerAttachInterrupt has now only 2 parameters. The edge parameter has been removed.
+
+# NOTES: Response by Vietnamese.
